@@ -1,6 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import React from "react";
 import "../globals.css";
+import React from "react";
 
 export const metadata = {
     title: 'AlThread',
