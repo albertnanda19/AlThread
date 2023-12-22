@@ -20,6 +20,7 @@ import * as z from "zod"
 import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 import { isBase64Image } from '@/lib/utils';
+import { useUploadThing } from '@/lib/uploadthing';
 
 interface Props {
     user: {
@@ -73,6 +74,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
         const blob = values.profile_photo;
 
         const hasImageChanged = isBase64Image(blob);
+
+        if (hasImageChanged) {
+            // const imgRed = 
+        }
     }
 
     return (
