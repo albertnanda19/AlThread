@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
-import { useUploadThing } from "@/lib/uploadthing";
+// import { useUploadThing } from "@/lib/uploadthing";
 import { isBase64Image } from "@/lib/utils";
 
 import { UserValidation } from "@/lib/validations/user";
@@ -40,7 +40,7 @@ interface Props {
 const AccountProfile = ({ user, btnTitle }: Props) => {
     const router = useRouter();
     const pathname = usePathname();
-    const { startUpload } = useUploadThing("media");
+    // const { startUpload } = useUploadThing("media");
 
     const [files, setFiles] = useState<File[]>([]);
 
@@ -57,14 +57,14 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     const onSubmit = async (values: z.infer<typeof UserValidation>) => {
         const blob = values.profile_photo;
 
-        const hasImageChanged = isBase64Image(blob);
-        if (hasImageChanged) {
-            const imgRes = await startUpload(files);
+        // const hasImageChanged = isBase64Image(blob);
+        // if (hasImageChanged) {
+        //     const imgRes = await startUpload(files);
 
-            if (imgRes && imgRes[0].url) {
-                values.profile_photo = imgRes[0].url;
-            }
-        }
+        //     if (imgRes && imgRes[0].url) {
+        //         values.profile_photo = imgRes[0].url;
+        //     }
+        // }
 
         await updateUser({
             name: values.name,
