@@ -1,9 +1,11 @@
-import { UserButton } from "@clerk/nextjs"
+const Home = async () => {
+  // const result = await fetchPosts();
 
-export default function Home() {
   return (
     <>
       <h1 className="head-text text-left">Home</h1>
     </>
   )
 }
+
+export default Home
